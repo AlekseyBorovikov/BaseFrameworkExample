@@ -1,29 +1,24 @@
-import extansions.*
+import extansions.addDaggerHiltDependencies
+import extansions.addKotlinDependencies
+import extansions.addNetworkDependencies
+import extansions.addSecurityDependencies
+import extansions.addSupportDependencies
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
+    id("com.android.library")
     id("org.jetbrains.kotlin.kapt")
-    id("dagger.hilt.android.plugin")
-    id("com.google.gms.google-services")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.example.structure_framework"
+    namespace = "com.smarttv.framework"
     compileSdk = Configs.CompileSdk
 
     defaultConfig {
-        applicationId = Configs.Id
         minSdk = Configs.MinSdk
-        targetSdk = Configs.TargetSdk
-        versionCode = Configs.VersionCode
-        versionName = Configs.VersionName
 
         testInstrumentationRunner = Configs.AndroidJunitRunner
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -38,10 +33,8 @@ android {
     compileOptions {
         sourceCompatibility = Configs.javaVersion
         targetCompatibility = Configs.javaVersion
-
     }
     kotlinOptions {
-        jvmTarget = "17"
         freeCompilerArgs = Configs.FreeCompilerArgs
     }
     buildFeatures {
@@ -49,21 +42,10 @@ android {
     }
 }
 
-
-
 dependencies {
-
     addKotlinDependencies()
-    addSupportDependencies()
-    addDatabaseDependencies()
     addNetworkDependencies()
-    addDaggerHiltDependencies()
-    addGoogleServicesDependencies()
+    addSupportDependencies()
     addSecurityDependencies()
-
-    addTestDependencies()
-
-    DATA_MODULE
-    COMMON_MODULE
-    RESOURCES_MODULE
+    addDaggerHiltDependencies()
 }

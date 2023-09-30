@@ -15,3 +15,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "structure_framework"
 include(":app")
+include(":common")
+include(":data")
+include(":resources")
+include(":locale")
+include(":remote")
+include(":domain")

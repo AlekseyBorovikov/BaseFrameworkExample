@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion
+
 object Configs {
 
     private const val versionMajor = 1
@@ -15,6 +17,7 @@ object Configs {
     const val Id = "com.example.structure_framework"
     val VersionCode = generateVersionCode()
     val VersionName = generateVersionName()
+    val javaVersion = JavaVersion.VERSION_17
     const val MinSdk = 24
     const val TargetSdk = 33
     const val CompileSdk = 33

@@ -129,3 +129,12 @@ fun DependencyHandler.addTestDependencies() {
     androidTestImplementation(AndroidTestingLib.JunitExt)
     androidTestImplementation(AndroidTestingLib.EspressoCore)
 }
+
+val DependencyHandler.DATA_MODULE
+    get() = implementation(project(mapOf("path" to ":data")))
+
+val DependencyHandler.COMMON_MODULE
+    get() = implementation(project(mapOf("path" to ":common")))
+
+val DependencyHandler.RESOURCES_MODULE
+    get() = implementation(project(mapOf("path" to ":resources")))
