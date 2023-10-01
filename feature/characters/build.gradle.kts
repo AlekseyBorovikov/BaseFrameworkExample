@@ -1,6 +1,7 @@
 import extansions.CORE_COMMON_MODULE
 import extansions.CORE_DOMAIN_MODULE
 import extansions.CORE_MODEL_MODULE
+import extansions.CORE_RESOURCES_MODULE
 import extansions.addDaggerHiltDependencies
 import extansions.addKotlinDependencies
 import extansions.addNavigationDependencies
@@ -53,4 +54,5 @@ dependencies {
     CORE_COMMON_MODULE
     CORE_DOMAIN_MODULE
     CORE_MODEL_MODULE
+    CORE_RESOURCES_MODULE
 }
