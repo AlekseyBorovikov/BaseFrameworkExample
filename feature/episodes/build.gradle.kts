@@ -1,12 +1,10 @@
-import extansions.COMMON_MODULE
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.example.data"
+    namespace = "com.example.episodes"
     compileSdk = 33
 
     defaultConfig {
@@ -42,6 +40,4 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
-    COMMON_MODULE
 }

@@ -62,8 +62,4 @@ dependencies {
     addSecurityDependencies()
 
     addTestDependencies()
-
-    DATA_MODULE
-    COMMON_MODULE
-    RESOURCES_MODULE
 }

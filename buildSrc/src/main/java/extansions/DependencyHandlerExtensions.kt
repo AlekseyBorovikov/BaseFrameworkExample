@@ -130,11 +130,26 @@ fun DependencyHandler.addTestDependencies() {
     androidTestImplementation(AndroidTestingLib.EspressoCore)
 }
 
-val DependencyHandler.DATA_MODULE
-    get() = implementation(project(mapOf("path" to ":data")))
+val DependencyHandler.CORE_DATA_MODULE
+    get() = implementation(project(mapOf("path" to ":core:data")))
 
-val DependencyHandler.COMMON_MODULE
-    get() = implementation(project(mapOf("path" to ":common")))
+val DependencyHandler.CORE_COMMON_MODULE
+    get() = implementation(project(mapOf("path" to ":core:common")))
 
-val DependencyHandler.RESOURCES_MODULE
-    get() = implementation(project(mapOf("path" to ":resources")))
+val DependencyHandler.CORE_DOMAIN_MODULE
+    get() = implementation(project(mapOf("path" to ":core:domain")))
+
+val DependencyHandler.CORE_LOCALE_MODULE
+    get() = implementation(project(mapOf("path" to ":core:locale")))
+
+val DependencyHandler.CORE_REMOTE_MODULE
+    get() = implementation(project(mapOf("path" to ":core:remote")))
+
+val DependencyHandler.FEATURE_CHARACTERS_MODULE
+    get() = implementation(project(mapOf("path" to ":feature:characters")))
+
+val DependencyHandler.FEATURE_EPISODES_MODULE
+    get() = implementation(project(mapOf("path" to ":feature:episodes")))
+
+val DependencyHandler.FEATURE_LOCATIONS_MODULE
+    get() = implementation(project(mapOf("path" to ":feature:locations")))

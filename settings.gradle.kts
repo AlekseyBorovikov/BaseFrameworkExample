@@ -13,11 +13,13 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "structure_framework"
+rootProject.name = "rick_and_morty_example"
 include(":app")
-include(":common")
-include(":data")
-include(":resources")
-include(":locale")
-include(":remote")
-include(":domain")
+include(":core:common")
+include(":core:data")
+include(":core:locale")
+include(":core:remote")
+include(":core:domain")
+include(":feature:characters")
+include(":feature:episodes")
+include(":feature:locations")

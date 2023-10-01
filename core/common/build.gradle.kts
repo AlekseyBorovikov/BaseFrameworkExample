@@ -11,7 +11,7 @@ plugins {
 }
 
 android {
-    namespace = "com.smarttv.framework"
+    namespace = "com.example.structure_framework.core.common"
     compileSdk = Configs.CompileSdk
 
     defaultConfig {
