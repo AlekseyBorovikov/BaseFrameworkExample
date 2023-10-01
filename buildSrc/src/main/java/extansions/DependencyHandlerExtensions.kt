@@ -92,9 +92,8 @@ fun DependencyHandler.addKotlinDependencies() {
 }
 
 fun DependencyHandler.addDaggerHiltDependencies() {
-    implementation(DaggerHiltLib.Android)
     kapt(DaggerHiltLib.Compiler)
-    implementation(DaggerHiltLib.Compose)
+    implementation(DaggerHiltLib.Android)
 }
 
 fun DependencyHandler.addSupportDependencies() {

@@ -6,11 +6,10 @@ plugins {
     id("com.google.devtools.ksp")
     id("org.jetbrains.kotlin.kapt")
     id("dagger.hilt.android.plugin")
-    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.example.structure_framework"
+    namespace = "com.example.app"
     compileSdk = Configs.CompileSdk
 
     defaultConfig {
@@ -55,11 +54,13 @@ dependencies {
 
     addKotlinDependencies()
     addSupportDependencies()
-    addDatabaseDependencies()
-    addNetworkDependencies()
+    addNavigationDependencies()
     addDaggerHiltDependencies()
-    addGoogleServicesDependencies()
-    addSecurityDependencies()
+    implementation(UILib.Material)
 
-    addTestDependencies()
+    CORE_COMMON_MODULE
+    FEATURE_CHARACTERS_MODULE
+    FEATURE_EPISODES_MODULE
+    FEATURE_LOCATIONS_MODULE
+    CORE_RESOURCES_MODULE
 }

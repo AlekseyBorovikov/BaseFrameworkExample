@@ -2,6 +2,7 @@ package com.example.locale.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
+import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.locale.model.RecentSearchCharacterEntity
@@ -9,14 +10,15 @@ import com.example.locale.model.RecentSearchCharacterEntity
 @Dao
 interface RecentSearchCharacterDao {
 
-    suspend fun insertRecentKeyword(entity: RecentSearchCharacterEntity)
+    @Insert
+    fun insertRecentKeyword(entity: RecentSearchCharacterEntity)
 
     @Delete
-    suspend fun deleteRecentKeyword(entity: RecentSearchCharacterEntity)
+    fun deleteRecentKeyword(entity: RecentSearchCharacterEntity)
 
     @Update
-    suspend fun updateRecentKeyword(entity: RecentSearchCharacterEntity)
+    fun updateRecentKeyword(entity: RecentSearchCharacterEntity)
 
-    @Query("select * from recentSearchCharacter")
-    suspend fun getAllRecentKeyword(): List<RecentSearchCharacterEntity>
+    @Query("SELECT * FROM recentSearchCharacter")
+    fun getAllRecentKeyword(): List<RecentSearchCharacterEntity>
 }
