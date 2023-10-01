@@ -13,12 +13,12 @@ plugins {
 
 android {
     namespace = "com.example.data"
-    compileSdk = 33
+    compileSdk = Configs.CompileSdk
 
     defaultConfig {
-        minSdk = 24
+        minSdk = Configs.MinSdk
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Configs.AndroidJunitRunner
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -32,11 +32,12 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = Configs.javaVersion
+        targetCompatibility = Configs.javaVersion
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
+        freeCompilerArgs = Configs.FreeCompilerArgs
     }
 }
 
