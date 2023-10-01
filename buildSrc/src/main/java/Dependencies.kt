@@ -10,8 +10,15 @@ object Versions {
     }
 
     object Kotlin {
-        const val core = "1.10.1"
+        const val core = "1.12.0"
         const val lifecycle_runtime = "2.6.1"
+        const val coroutines = "1.6.4"
+    }
+
+    object Async {
+        const val work_runtime = "2.8.1"
+        const val coroutine_android = "1.6.4"
+        const val coroutine_core = "1.4.1"
         const val coroutines = "1.6.4"
     }
 
@@ -85,6 +92,13 @@ object GoogleServicesLib {
 
 object SecurityLib {
     const val CryptoKtx = "androidx.security:security-crypto-ktx:${Versions.Security}"
+}
+
+object AsyncLib {
+//    const val WorkRuntime = "androidx.work:work-runtime-ktx:${Versions.Async.work_runtime}"
+    const val CoroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Async.coroutine_android}"
+    const val CoroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Async.coroutine_core}"
+//    const val LifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.Lifecycle.main}"
 }
 
 object TestingLib {

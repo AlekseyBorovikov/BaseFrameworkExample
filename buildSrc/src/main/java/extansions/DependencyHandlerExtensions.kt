@@ -124,6 +124,11 @@ fun DependencyHandler.addSecurityDependencies() {
     implementation(SecurityLib.CryptoKtx)
 }
 
+fun DependencyHandler.addAsyncDependencies() {
+    implementation(AsyncLib.CoroutineCore)
+    implementation(AsyncLib.CoroutineAndroid)
+}
+
 fun DependencyHandler.addTestDependencies() {
     testImplementation(TestingLib.Junit)
     androidTestImplementation(AndroidTestingLib.JunitExt)
@@ -144,6 +149,9 @@ val DependencyHandler.CORE_LOCALE_MODULE
 
 val DependencyHandler.CORE_REMOTE_MODULE
     get() = implementation(project(mapOf("path" to ":core:remote")))
+
+val DependencyHandler.CORE_MODEL_MODULE
+    get() = implementation(project(mapOf("path" to ":core:model")))
 
 val DependencyHandler.FEATURE_CHARACTERS_MODULE
     get() = implementation(project(mapOf("path" to ":feature:characters")))

@@ -1,16 +1,23 @@
+import extansions.CORE_COMMON_MODULE
+import extansions.CORE_MODEL_MODULE
+import extansions.addDaggerHiltDependencies
+import extansions.addKotlinDependencies
+import extansions.addNetworkDependencies
+
 plugins {
     id("com.android.library")
+    id("org.jetbrains.kotlin.kapt")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
     namespace = "com.example.remote"
-    compileSdk = 33
+    compileSdk = Configs.CompileSdk
 
     defaultConfig {
-        minSdk = 24
+        minSdk = Configs.MinSdk
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Configs.AndroidJunitRunner
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -24,20 +31,21 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = Configs.javaVersion
+        targetCompatibility = Configs.javaVersion
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
+        freeCompilerArgs = Configs.FreeCompilerArgs
     }
 }
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    addKotlinDependencies()
+    addNetworkDependencies()
+    addDaggerHiltDependencies()
+
+    CORE_COMMON_MODULE
+    CORE_MODEL_MODULE
 }
