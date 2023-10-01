@@ -102,6 +102,12 @@ fun DependencyHandler.addSupportDependencies() {
     implementation(SupportLib.Appcompat)
 }
 
+fun DependencyHandler.addNavigationDependencies() {
+    // Navigation
+    implementation(NavigationLib.Fragment)
+    implementation(NavigationLib.UI)
+}
+
 fun DependencyHandler.addGoogleServicesDependencies() {
     implementation(GoogleServicesLib.Firebase)
 }

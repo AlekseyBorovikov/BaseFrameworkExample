@@ -3,6 +3,7 @@ import extansions.implementation
 object Versions {
     const val Room = "2.5.1"
     const val Security = "1.1.0-alpha06"
+    const val Navigation = "2.5.3"
 
     object Gradle {
         const val plugin = "8.0.1"
@@ -10,7 +11,7 @@ object Versions {
     }
 
     object Kotlin {
-        const val core = "1.12.0"
+        const val core = "1.10.1"
         const val lifecycle_runtime = "2.6.1"
         const val coroutines = "1.6.4"
     }
@@ -100,6 +101,12 @@ object AsyncLib {
     const val CoroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Async.coroutine_core}"
 //    const val LifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.Lifecycle.main}"
 }
+
+object NavigationLib {
+    const val UI = "androidx.navigation:navigation-ui-ktx:${Versions.Navigation}"
+    const val Fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.Navigation}"
+}
+
 
 object TestingLib {
     const val Junit = "junit:junit:${Versions.Testing.junit}"
