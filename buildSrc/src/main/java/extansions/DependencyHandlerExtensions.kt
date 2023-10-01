@@ -124,6 +124,11 @@ fun DependencyHandler.addSecurityDependencies() {
     implementation(SecurityLib.CryptoKtx)
 }
 
+fun DependencyHandler.addAsyncDependencies() {
+    implementation(AsyncLib.CoroutineCore)
+    implementation(AsyncLib.CoroutineAndroid)
+}
+
 fun DependencyHandler.addTestDependencies() {
     testImplementation(TestingLib.Junit)
     androidTestImplementation(AndroidTestingLib.JunitExt)
