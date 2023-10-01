@@ -8,6 +8,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.kapt")
     id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -48,4 +49,5 @@ dependencies {
     addSupportDependencies()
     addSecurityDependencies()
     addDaggerHiltDependencies()
+    implementation(LifecycleLib.ViewModel)
 }

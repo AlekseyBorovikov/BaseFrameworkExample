@@ -92,14 +92,19 @@ fun DependencyHandler.addKotlinDependencies() {
 }
 
 fun DependencyHandler.addDaggerHiltDependencies() {
-    implementation(DaggerHiltLib.Android)
     kapt(DaggerHiltLib.Compiler)
-    implementation(DaggerHiltLib.Compose)
+    implementation(DaggerHiltLib.Android)
 }
 
 fun DependencyHandler.addSupportDependencies() {
     implementation(SupportLib.Timber)
     implementation(SupportLib.Appcompat)
+}
+
+fun DependencyHandler.addNavigationDependencies() {
+    // Navigation
+    implementation(NavigationLib.Fragment)
+    implementation(NavigationLib.UI)
 }
 
 fun DependencyHandler.addGoogleServicesDependencies() {
@@ -152,6 +157,9 @@ val DependencyHandler.CORE_REMOTE_MODULE
 
 val DependencyHandler.CORE_MODEL_MODULE
     get() = implementation(project(mapOf("path" to ":core:model")))
+
+val DependencyHandler.CORE_RESOURCES_MODULE
+    get() = implementation(project(mapOf("path" to ":core:resources")))
 
 val DependencyHandler.FEATURE_CHARACTERS_MODULE
     get() = implementation(project(mapOf("path" to ":feature:characters")))

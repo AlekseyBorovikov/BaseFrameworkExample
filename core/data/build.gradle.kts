@@ -4,11 +4,13 @@ import extansions.CORE_REMOTE_MODULE
 import extansions.CORE_LOCALE_MODULE
 import extansions.addDaggerHiltDependencies
 import extansions.addKotlinDependencies
+import extansions.addNetworkDependencies
 
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.kapt")
     id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -45,6 +47,7 @@ dependencies {
 
     addKotlinDependencies()
     addDaggerHiltDependencies()
+    addNetworkDependencies()
 
     CORE_COMMON_MODULE
     CORE_LOCALE_MODULE

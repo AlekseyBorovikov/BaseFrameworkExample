@@ -10,6 +10,7 @@ import com.example.locale.model.RecentSearchCharacterEntity
 @Database(
     entities = [RecentSearchCharacterEntity::class],
     version = 1,
+    exportSchema = false,
 )
 abstract class RickAndMortyDatabase : RoomDatabase() {
     abstract fun recentSearchCharacterDao(): RecentSearchCharacterDao
